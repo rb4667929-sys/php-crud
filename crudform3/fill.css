@@ -1,0 +1,154 @@
+/* styles.css - Styles for Fetch Same Name Data form and table */
+
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #4f46e5; /* indigo */
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #e6e9ef;
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg), #eef2ff 60%);
+  color: #111827;
+  margin: 0;
+  padding: 32px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(33, 41, 54, 0.08);
+  border: 1px solid var(--border);
+}
+
+h1 {
+  font-size:20px;
+  margin:0 0 12px 0
+   }
+
+form { 
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center
+  }
+
+label { 
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:6px
+  }
+
+.form-row {
+  flex:1 1 240px;
+  min-width:180px
+  }
+
+select,input[type="date"],input[type="number"],input[type="text"]{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background: #fff;
+  font-size:14px;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+select:focus, input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(79,70,229,0.12);
+}
+
+.actions {
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+
+input[type="submit"], .btn-view {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+
+input[type="submit"]:hover, .btn-view:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,70,229,0.12)}
+
+/* Keep the <a> inside button styled correctly */
+button a {
+  color:inherit; 
+  text-decoration:none;
+  display:inline-block;
+  padding:10px 12px
+}
+
+/* table styling */
+.table-wrap { 
+  margin-top:22px;
+  overflow:auto
+}
+
+table { 
+  width:100%;
+  border-collapse:collapse;
+  background:transparent 
+}
+
+th,td { 
+  padding:12px 10px;
+  text-align:left;
+  border-bottom:1px solid var(--border) 
+}
+
+th{background:#fbfbff;
+  font-weight:700;
+  color:#374151 
+}
+
+tr:hover td {
+  background:rgba(15,23,42,0.02) 
+}
+
+.empty-row {
+  color:var(--muted);
+  text-align:center;
+  padding:20px 
+  }
+
+/* responsive */
+@media (max-width:640px){
+  form { 
+    flex-direction:column
+  }
+  .actions { 
+    width:100%; 
+    justify-content: space-between
+  }
+}
+
+/* small utility classes */
+.success { 
+  color:var(--success); 
+}
+
+.error { 
+  color:var(--danger); 
+}
